@@ -4,6 +4,10 @@
 
 This repository contains Python code for a Variational Quantum Linear System Solver (VQLS). The VQLS algorithm is designed to find a quantum state vector that approximates the solution to a linear system of equations by optimizing variational parameters in a quantum circuit.
 
+## Motivation
+
+This repository was created to facilitate the seamless usage and implementation of the Variational Quantum Linear Solver (VQLS). Building upon the principles outlined in the original tutorial at [https://pennylane.ai/qml/demos/tutorial_vqls/](https://pennylane.ai/qml/demos/tutorial_vqls/), our adaptation extends its capabilities to handle general matrices and ansatz circuits. For a more comprehensive exploration of the foundational concepts, the original paper is available [here](https://quantum-journal.org/papers/q-2023-11-22-1188/).
+
 ## Files
 
 ### `vqls_utils.py`
