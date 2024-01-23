@@ -3,7 +3,7 @@ import pennylane as qml
 from pennylane import numpy as np
 import matplotlib.pyplot as plt
 from pennylane.pauli import PauliSentence
-from typing import List
+from typing import List, Any, Tuple
 
 def make_CA(idx: int, ancilla_idx: int, pauli_strings: list[list[str]]) -> None:
     """Constructs the controlled unitary component A_l of the problem matrix A.
@@ -341,29 +341,69 @@ def plot_vqls_results(n_qubits: int, c_probs: list[float], q_probs: list[float],
     elif file_name == "quantum_probabilities": 
         plt.show()
 
-def filter_comb(combinations_):
+def filter_comb(combinations_: List[List[int]]) -> List[List[int]]:
+    """
+    Filters combinations to include only those with unique elements.
+
+    Args:
+        combinations_ (List[List[int]]): List of combinations.
+
+    Returns:
+        List[List[int]]: Filtered list of combinations.
+    """
     combinations = []
     for cnot_list in combinations_:
         if len(cnot_list) == 1:
+            # Single-element combinations are always included
             combinations.append(cnot_list)
         if len(cnot_list) == 2:
+            # Two-element combinations are included if the elements are distinct
             if cnot_list[0] != cnot_list[1]:
                 combinations.append(cnot_list)
         if len(cnot_list) == 3:
+            # Three-element combinations are included if all elements are distinct
             if cnot_list[0] != cnot_list[1] and cnot_list[0] != cnot_list[2] and cnot_list[1] != cnot_list[2]:
                 combinations.append(cnot_list)
     return combinations
 
-def load_from_json(file_path): 
+def load_from_json(file_path: str) -> Any:
+    """
+    Load data from a JSON file.
+
+    Args:
+        file_path (str): Path to the JSON file.
+
+    Returns:
+        Any: Loaded data from the JSON file.
+    """
     with open(file_path, 'r') as json_file:
         data = json.load(json_file)
     return data
 
-def save_to_json(data, file_path):
+def save_to_json(data: Any, file_path: str) -> None:
+    """
+    Save data to a JSON file.
+
+    Args:
+        data (Any): Data to be saved to the JSON file.
+        file_path (str): Path to the JSON file.
+
+    Returns:
+        None
+    """
     with open(file_path, 'w') as json_file:
         json.dump(data, json_file)
 
-def convert_to_pauli_string(pauli_sentence: PauliSentence) -> List[List[str]]:
+def convert_to_pauli_string(pauli_sentence: PauliSentence) -> Tuple[List[List[str]], List[float]]:
+    """
+    Convert a PauliSentence object to a list of Pauli strings and corresponding coefficients.
+
+    Args:
+        pauli_sentence (PauliSentence): Input PauliSentence object.
+
+    Returns:
+        Tuple[List[List[str]], List[float]]: Tuple containing the list of Pauli strings and coefficients.
+    """
     pauli_string = []
     coeffs_list = []
     for term, coefficient in pauli_sentence.items():
