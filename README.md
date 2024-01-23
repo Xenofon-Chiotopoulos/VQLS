@@ -18,6 +18,7 @@ This file contains utility functions and definitions for the VQLS algorithm. Key
 - `plot_vqls_results`: Plots the results of the VQLS algorithm, including classical and quantum probabilities.
 - `count_variational_gates`: Counts the number of variational gates in a given ansatz circuit.
 - `custom_variational_block`: Implements a custom variational block using provided ansatz information.
+- `convert_to_pauli_string`: Converts a `PauliSentence` object to a list of Pauli strings and corresponding coefficients.
 - `load_from_json` and `save_to_json`: Utility functions to load and save data from/to JSON files.
 
 ### `examples.py`
