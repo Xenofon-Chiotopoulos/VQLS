@@ -1,3 +1,8 @@
+import os
+import sys
+import sphinx_rtd_theme  # Add this line
+
+sys.path.insert(0, os.path.abspath('../..'))
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -24,14 +29,11 @@ exclude_patterns = []
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
+html_baseurl = ''
 html_theme = 'alabaster'
 html_static_path = ['_static']
 
-import os
-import sys
-import sphinx_rtd_theme  # Add this line
 
-sys.path.insert(0, os.path.abspath('../src'))
 
 extensions = [
     'sphinx.ext.autodoc',

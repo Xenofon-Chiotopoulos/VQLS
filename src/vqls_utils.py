@@ -346,7 +346,7 @@ def filter_comb(combinations_: List[List[int]]) -> List[List[int]]:
     Filters combinations to include only those with unique elements.
 
     Args:
-        combinations_ (List[List[int]]): List of combinations.
+        cnot_combinations (List[List[int]]): List of combinations.
 
     Returns:
         List[List[int]]: Filtered list of combinations.
