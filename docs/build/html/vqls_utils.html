@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>src.vqls_utils module &mdash; vqls_docs 0.1 documentation</title>
+  <title>&lt;no title&gt; &mdash; VQLS 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -20,20 +20,19 @@
         <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Welcome to vqls_utils’s documentation!" href="index.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
+        <div class="wy-side-nav-search"  style="background: #4e5d6c" >
 
           
           
-          <a href="index.html" class="icon icon-home">
-            vqls_docs
+          <a href="index.html">
+            
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -43,33 +42,30 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">src.vqls_utils module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.calc_c_probs"><code class="docutils literal notranslate"><span class="pre">calc_c_probs()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.construct_matrix"><code class="docutils literal notranslate"><span class="pre">construct_matrix()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.convert_to_pauli_string"><code class="docutils literal notranslate"><span class="pre">convert_to_pauli_string()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.count_variational_gates"><code class="docutils literal notranslate"><span class="pre">count_variational_gates()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.custom_variational_block"><code class="docutils literal notranslate"><span class="pre">custom_variational_block()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.filter_comb"><code class="docutils literal notranslate"><span class="pre">filter_comb()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.load_from_json"><code class="docutils literal notranslate"><span class="pre">load_from_json()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.make_CA"><code class="docutils literal notranslate"><span class="pre">make_CA()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.plot_vqls_results"><code class="docutils literal notranslate"><span class="pre">plot_vqls_results()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.process_vqls_output"><code class="docutils literal notranslate"><span class="pre">process_vqls_output()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.run_vqls"><code class="docutils literal notranslate"><span class="pre">run_vqls()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.save_to_json"><code class="docutils literal notranslate"><span class="pre">save_to_json()</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#src.vqls_utils.variational_block"><code class="docutils literal notranslate"><span class="pre">variational_block()</span></code></a></li>
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#"><code class="docutils literal notranslate"><span class="pre">calc_c_probs()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.construct_matrix"><code class="docutils literal notranslate"><span class="pre">construct_matrix()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.convert_to_pauli_string"><code class="docutils literal notranslate"><span class="pre">convert_to_pauli_string()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.count_variational_gates"><code class="docutils literal notranslate"><span class="pre">count_variational_gates()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.custom_variational_block"><code class="docutils literal notranslate"><span class="pre">custom_variational_block()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.filter_comb"><code class="docutils literal notranslate"><span class="pre">filter_comb()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.load_from_json"><code class="docutils literal notranslate"><span class="pre">load_from_json()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.make_CA"><code class="docutils literal notranslate"><span class="pre">make_CA()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.plot_vqls_results"><code class="docutils literal notranslate"><span class="pre">plot_vqls_results()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.process_vqls_output"><code class="docutils literal notranslate"><span class="pre">process_vqls_output()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.run_vqls"><code class="docutils literal notranslate"><span class="pre">run_vqls()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.save_to_json"><code class="docutils literal notranslate"><span class="pre">save_to_json()</span></code></a></li>
+<li><a class="reference internal" href="#src.vqls_utils.variational_block"><code class="docutils literal notranslate"><span class="pre">variational_block()</span></code></a></li>
 </ul>
-</li>
-</ul>
-
+</div>
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #4e5d6c" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">vqls_docs</a>
+          <a href="index.html">VQLS</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -77,7 +73,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">src.vqls_utils module</li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/vqls_utils.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -87,9 +83,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-src.vqls_utils">
-<span id="src-vqls-utils-module"></span><h1>src.vqls_utils module<a class="headerlink" href="#module-src.vqls_utils" title="Link to this heading"></a></h1>
-<dl class="py function">
+  <dl class="py function" id="module-src.vqls_utils">
 <dt class="sig sig-object py" id="src.vqls_utils.calc_c_probs">
 <span class="sig-prename descclassname"><span class="pre">src.vqls_utils.</span></span><span class="sig-name descname"><span class="pre">calc_c_probs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A_num</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tensor</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">b</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tensor</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tensor</span></span></span><a class="headerlink" href="#src.vqls_utils.calc_c_probs" title="Link to this definition"></a></dt>
 <dd><p>Calculates the vector <cite>x</cite> that satisfies the equation <cite>Ax = b</cite>.</p>
@@ -243,14 +237,11 @@ file_path (str): Path to the JSON file.</p>
 <dd><p>Old custom set variational block</p>
 </dd></dl>
 
-</section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to vqls_utils’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-    </div>
+          <footer>
 
   <hr/>
 

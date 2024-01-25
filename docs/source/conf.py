@@ -1,8 +1,6 @@
+import sphinx_rtd_theme
 import os
 import sys
-import sphinx_rtd_theme
-
-sys.path.insert(0, os.path.abspath('../..'))
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -11,26 +9,32 @@ sys.path.insert(0, os.path.abspath('../..'))
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'vqls_docs'
+project = 'VQLS'
 copyright = '2024, Xenofon Chiotopoulos'
 author = 'Xenofon Chiotopoulos'
 release = '0.1'
-
+sys.path.insert(0, os.path.abspath('../..'))
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx_rtd_theme', 
-]
+extensions = []
 
 templates_path = ['_templates']
 exclude_patterns = []
 
+
+
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_baseurl = ''
 html_theme = 'sphinx_rtd_theme'
-#html_static_path = ['_static']
-html_output = os.path.abspath('../build/html')
+html_theme_options = {
+    'style_nav_header_background': '#4e5d6c',
+    'logo_only': True,
+}
+extensions = [
+    'sphinx_rtd_theme',
+    'sphinx.ext.autodoc',
+]
+html_static_path = ['_static']
+
