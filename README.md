@@ -12,7 +12,7 @@ This repository was created to facilitate the seamless usage and implementation 
 
 ### Documentation
 
-For detailed documentation, please refer to the [official documentation](vqls.readthedocs.io).
+For detailed documentation, please refer to the [official documentation](vqls.rtfd.io).
 
 ## Files
 
