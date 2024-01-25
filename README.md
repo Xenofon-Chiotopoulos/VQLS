@@ -48,3 +48,7 @@ venv\Scripts\activate  # Windows
 . venv/bin/activate  # macOS/Linux
 pip install -r requirements.txt
 ```
+
+## Documentation
+
+For detailed documentation, please refer to the [official documentation](vqls.readthedocs.io).
