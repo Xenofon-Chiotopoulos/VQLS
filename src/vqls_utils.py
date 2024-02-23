@@ -286,6 +286,9 @@ def run_vqls(n_qubits: int, pauli_string: list[list[str]], c: list[float], ansat
         # Cost function C_L
         return 0.5 - 0.5 * mu_sum / (n_qubits * psi_norm(weights))
 
+    def getReward(self, weights, quantum_circuit=None, ansatz=''):
+        return np.exp(-10*self.costFunc(weights, quantum_circuit, ansatz))
+    
     np.random.seed(rng_seed)
     w = q_delta * np.random.randn(count_variational_gates(ansatz), requires_grad=True)
 
@@ -337,7 +340,7 @@ def plot_vqls_results(n_qubits: int, c_probs: list[float], q_probs: list[float],
 
     plt.tight_layout()
     if file_name != "quantum_probabilities":
-        plt.savefig(f"cluster_dump/{file_name}.png")
+        plt.savefig(f"{file_name}.png")
     elif file_name == "quantum_probabilities": 
         plt.show()
 
