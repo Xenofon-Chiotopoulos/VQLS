@@ -1,6 +1,6 @@
 # Importing necessary libraries
 from pennylane import numpy as np
-from src.vqls_utils import construct_matrix, plot_vqls_results, run_vqls, process_vqls_output, load_from_json
+from src.vqls_utils import VQLS, load_from_json
 import time
 start = time.time()
 # Define coefficients and Pauli strings for the linear system
@@ -14,33 +14,21 @@ print(c,pauli_string)
 # Define the target vector
 b = np.ones(2 ** len(pauli_string[0])) 
 
-# Determine the number of qubits in the system
-n_qubits = len(pauli_string[0])
-
 # Set the number of quantum measurements
 n_shots = 10 ** 6
+ansatz = [{"gate": "H", "wires": [0,1,2,3]},]
 
-# Define the variational ansatz circuit
-ansatz = [
-    {"gate": "H", "wires": [0, 1, 2]},
-    {"gate": "RX", "wires": [0]}#, 1, 2]},
-    #{"gate": "RY", "wires": [0, 1, 2]},
-    #{"gate": "RY", "wires": [0, 1, 2]},
-    #{"gate": "RY", "wires": [0, 1, 2]},
-    #{"gate": "CNOT", "wires": [[1, 2]]},
-]
-
-# Construct the matrix representation of the linear system
-A_num = construct_matrix(c, pauli_string)
-print(A_num)
+vqls_instance = VQLS(c, pauli_string, b, n_shots)
+vqls_instance.steps = 10
+vqls_instance.print_step = True
 
 # Run the VQLS algorithm to optimize variational parameters
-w, cost_history = run_vqls(n_qubits, pauli_string, c, ansatz, rng_seed=0, steps=251, eta=0.8, q_delta=0.5, print_step=True)
+w, cost_history = vqls_instance.run_vqls(None, ansatz)
 
 # Calculate classical and quantum probabilities
-c_probs, q_probs = process_vqls_output(n_qubits, w, ansatz, A_num, b, n_shots, print_output=True)
+c_probs, q_probs = vqls_instance.process_vqls_output(w, ansatz)
 
 # Plot and visualize the results of the VQLS algorithm
-plot_vqls_results(n_qubits, c_probs, q_probs, cost_history, file_name="quantum_probabilities_1")
+vqls_instance.plot_vqls_results(c_probs, q_probs, cost_history, file_name="quantum_probabilities_1")
 
 print(time.time()-start)
